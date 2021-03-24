@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Criadores.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Criadores
 {
@@ -24,7 +26,17 @@ namespace Criadores
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //*********************************************
+            //conf bd
+            //**************************************************
+            services.AddDbContext<CriadorDB>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("myConnectionString"))
+                );
+
         }
+
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
