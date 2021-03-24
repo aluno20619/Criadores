@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Criadores
 {
     /// <summary>
@@ -6,6 +8,10 @@ namespace Criadores
     /// </summary>
     public class Caes
     {
+        public  Caes(){
+            ListaDeFotos = new HashSet<Fotografias>();
+            ListaDeCriadores = new HashSet<Cri_Cae>();
+        }
         /// <summary>
         /// identificador do cão
         /// </summary>
@@ -14,7 +20,7 @@ namespace Criadores
         /// <summary>
         /// nome do cão
         /// </summary>
-        public string Nome{ get; set; }
+        public string Nome { get; set; }
 
         /// <summary>
         /// genero do cão
@@ -24,17 +30,27 @@ namespace Criadores
         /// <summary>
         /// data de nascimento do cão
         /// </summary>
-        public DateTime DataNascimento{ get; set; }
+        public DateTime DataNascimento { get; set; }
 
-        /// <summary>
-        /// data de compra do cao
-        /// </summary>
-        public DateTime DataCompra { get; set; }
-
+        
         /// <summary>
         /// registo do cão no livro de origens
         /// </summary>
         public string LOP { get; set; }
+
+        //**************************************
+
+        /// <summary>
+        /// FK para a raça do cão
+        /// </summary>
+        [ForeignKey(nameof(Raca))] //representa uma fk para a classe Raça
+        public int RacaFK { get; set; }//atributo usado no sgbd e no c#
+        public Racas Raca { get; set; }//atributo a ser usado no c# representa fk
+
+    public ICollection<Fotografias> ListaDeFotos { get; set; }
+
+    public ICollection<Cri_Cae> ListaDeCriadores { get; set; }
+
     }
 
 }
