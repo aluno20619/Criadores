@@ -33,7 +33,7 @@ namespace Criadores
             services.AddDbContext<CriadorDB>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("myConnectionString"))
                 );
-
+            //install entity framework 5.0.4
         }
 
         

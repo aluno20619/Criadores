@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Criadores
 {
@@ -15,6 +16,7 @@ namespace Criadores
         /// <summary>
         /// identificador do cão
         /// </summary>
+        [Key]
         public int Id { get; set; }
 
         /// <summary>

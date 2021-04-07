@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace Criadores.Data
 {
     /// <summary>
@@ -11,7 +12,7 @@ namespace Criadores.Data
     /// </summary>
     public class CriadorDB : DbContext
     {
-        //construtor da classe DB
+        //construtor da classe DB, ver conteeudo de startup
         public CriadorDB(DbContextOptions<CriadorDB> options) : base(options) { }
 
         //representar as tabelas da bd

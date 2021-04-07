@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Criadores
 {
@@ -13,6 +14,7 @@ namespace Criadores
         /// <summary>
         /// identificador da fotografia
         /// </summary>
+        [Key]
         public int Id{ get; set; }
 
         /// <summary>
