@@ -22,6 +22,7 @@ namespace Criadores
         /// <summary>
         ///Nome do criador
         /// </summary>
+        [Required]
         public string Nome { get; set; }
 
         /// <summary>
@@ -32,21 +33,25 @@ namespace Criadores
         /// <summary>
         ///morada do criador, não contém o código postal
         /// </summary>
+        [Required]
         public string Morada { get; set; }
 
         /// <summary>
         /// código postal do criador
         /// </summary>
+        [Required]
         public string CodigoPos { get; set; }
 
         /// <summary>
         /// telemóvel do criador
         /// </summary>
-        public string Telemomovel { get; set; }
+        //ou email ou tele
+        public string Telemovel { get; set; }
 
         /// <summary>
         /// endereço email do criador
         /// </summary>
+        //ou email ou tele
         public string Email { get; set; }
 
         public ICollection<Cri_Cae> ListaDeCaes { get; set; }
